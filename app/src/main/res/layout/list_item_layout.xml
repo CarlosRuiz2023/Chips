@@ -1,0 +1,30 @@
+<!-- list_item_layout.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <!-- Texto del elemento -->
+    <TextView
+        android:id="@+id/textViewListItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:clickable="true"/>
+
+    <!-- Botón adicional -->
+
+    <Button
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:id="@+id/buttonListItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:text="Baneado"
+        android:textColor="@color/design_default_color_error"
+        android:backgroundTint="@color/md_theme_dark_background"
+        />
+
+
+</RelativeLayout>
