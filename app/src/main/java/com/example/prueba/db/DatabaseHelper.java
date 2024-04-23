@@ -7,6 +7,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "app_database";
     private static final int DATABASE_VERSION = 1;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
     public static final String TABLE_NAME = "datos";
     public static final String COLUMN_IMEI = "imei";
     public static final String COLUMN_NUMERO = "numero";

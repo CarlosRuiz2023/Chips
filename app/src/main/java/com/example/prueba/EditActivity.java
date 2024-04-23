@@ -3,7 +3,10 @@ package com.example.prueba;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.util.Log;
+=======
+>>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +19,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.prueba.db.DatabaseManager;
+<<<<<<< HEAD
 import com.example.prueba.model.Chip;
+=======
+>>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Calendar;
@@ -48,6 +54,7 @@ public class EditActivity extends AppCompatActivity {
 
         // Obtener el dato seleccionado de la actividad anterior
         Intent intent = getIntent();
+<<<<<<< HEAD
         // Recuperar el objeto Chip del Intent
         Chip chipSeleccionado = (Chip) getIntent().getSerializableExtra("chipSeleccionado");
 
@@ -58,6 +65,18 @@ public class EditActivity extends AppCompatActivity {
             editTextBaneo.setText(chipSeleccionado.getBaneo()); // Baneo: xxxx
             editTextCompania.setText(chipSeleccionado.getCompania()); // Compañía: xxxx
             editTextDetalles.setText(chipSeleccionado.getDetalle()); // Detalles: xxxx
+=======
+        String datoSeleccionado = intent.getStringExtra("datoSeleccionado");
+
+        // Mostrar el dato seleccionado en los campos de edición
+        if (datoSeleccionado != null) {
+            String[] partes = datoSeleccionado.split("\n");
+            editTextImei.setText(partes[0].substring(6)); // IMEI: xxxx
+            editTextNumero.setText(partes[1].substring(8)); // Número: xxxx
+            editTextBaneo.setText(partes[2].substring(7)); // Baneo: xxxx
+            editTextCompania.setText(partes[3].substring(10)); // Compañía: xxxx
+            editTextDetalles.setText(partes[4].substring(10)); // Detalles: xxxx
+>>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
         }
 
         // Configurar el botón de guardar para actualizar el dato en la base de datos
@@ -72,8 +91,12 @@ public class EditActivity extends AppCompatActivity {
                 String nuevosDetalles = editTextDetalles.getText().toString();
 
                 // Actualizar el dato en la base de datos
+<<<<<<< HEAD
                 Chip chip = new Chip(nuevoImei, nuevoNumero, nuevoBaneo, nuevaCompania, nuevosDetalles);
                 dbManager.updateData(chip);
+=======
+                dbManager.updateData(nuevoImei, nuevoNumero, nuevoBaneo, nuevaCompania, nuevosDetalles);
+>>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
 
                 // Mostrar un mensaje de éxito o cerrar la actividad
                 Toast.makeText(EditActivity.this, "Dato actualizado correctamente", Toast.LENGTH_SHORT).show();
@@ -107,9 +130,13 @@ public class EditActivity extends AppCompatActivity {
                         // Obtener el imei del item seleccionado
                         String imeiABorrrar = editTextImei.getText().toString();
                         // Eliminar el dato de la base de datos
+<<<<<<< HEAD
                         Chip chip = new Chip();
                         chip.setImei(imeiABorrrar);
                         dbManager.deleteData(chip);
+=======
+                        dbManager.deleteData(imeiABorrrar);
+>>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
 
                         // Mostrar un mensaje de éxito o cerrar la actividad
                         Toast.makeText(EditActivity.this, "Dato eliminado correctamente", Toast.LENGTH_SHORT).show();
@@ -142,6 +169,7 @@ public class EditActivity extends AppCompatActivity {
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+<<<<<<< HEAD
                                 String dia="";
                                 if(dayOfMonth<10){
                                     dia="0"+dayOfMonth;
@@ -156,6 +184,10 @@ public class EditActivity extends AppCompatActivity {
                                 }
                                 // Actualizar el campo de texto con la fecha seleccionada
                                 editTextBaneo.setText(year + "/" + mes + "/" + dia);
+=======
+                                // Actualizar el campo de texto con la fecha seleccionada
+                                editTextBaneo.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
+>>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
                             }
                         }, year, month, dayOfMonth);
                 datePickerDialog.show();

@@ -10,8 +10,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
+<<<<<<< HEAD
         android:clickable="true"
         android:textColor="@color/md_theme_light_onSecondaryContainer"/>
+=======
+        android:clickable="true"/>
+>>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
 
     <!-- Botón adicional -->
 

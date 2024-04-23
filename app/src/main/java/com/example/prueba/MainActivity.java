@@ -19,7 +19,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.prueba.db.DatabaseHelper;
 import com.example.prueba.db.DatabaseManager;
+<<<<<<< HEAD
 import com.example.prueba.model.Chip;
+=======
+>>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -29,7 +32,11 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton fabAgregar;
     private ListView listViewDatos;
     private CustomAdapter adapter;
+<<<<<<< HEAD
     private ArrayList<Chip> chipsList = new ArrayList<>();
+=======
+    private ArrayList<String> datosList = new ArrayList<>();
+>>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
 
     @Override
     protected void onResume() {
@@ -52,7 +59,11 @@ public class MainActivity extends AppCompatActivity {
         dbManager.open();
 
         // Configurar adaptador para el ListView
+<<<<<<< HEAD
         adapter = new CustomAdapter(this, chipsList);
+=======
+        adapter = new CustomAdapter(this, datosList);
+>>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
         listViewDatos.setAdapter(adapter);
 
         // Asignar acción al botón "Agregar"
@@ -73,13 +84,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void mostrarDatos() {
+<<<<<<< HEAD
         // Limpiar la lista de chips
         chipsList.clear();
+=======
+        // Limpiar la lista de datos
+        datosList.clear();
+>>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
 
         // Obtener todos los datos de la base de datos
         Cursor cursor = dbManager.getAllData();
 
+<<<<<<< HEAD
         // Procesar los datos y agregarlos a la lista de chips
+=======
+        // Procesar los datos y agregarlos a la lista
+>>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
         if (cursor.moveToFirst()) {
             do {
                 @SuppressLint("Range") String imei = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_IMEI));
@@ -88,9 +108,15 @@ public class MainActivity extends AppCompatActivity {
                 @SuppressLint("Range") String compania = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_COMPANIA));
                 @SuppressLint("Range") String detalles = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_DETALLES));
 
+<<<<<<< HEAD
                 // Construir el objeto Chip y agregarlo a la lista
                 Chip chip = new Chip(imei, numero, baneo, compania, detalles);
                 chipsList.add(chip);
+=======
+                // Construir el dato y agregarlo a la lista
+                String dato = "IMEI: " + imei + "\nNúmero: " + numero + "\nBaneo: " + baneo + "\nCompañía: " + compania + "\nDetalles: " + detalles;
+                datosList.add(dato);
+>>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
             } while (cursor.moveToNext());
         }
 
@@ -109,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Adaptador personalizado para el ListView
+<<<<<<< HEAD
     private class CustomAdapter extends ArrayAdapter<Chip> {
         private Context mContext;
         private ArrayList<Chip> chipsList;
@@ -118,10 +145,25 @@ public class MainActivity extends AppCompatActivity {
             super(context, 0, chips);
             mContext = context;
             chipsList = chips;
+=======
+    private class CustomAdapter extends ArrayAdapter<String> {
+        private Context mContext;
+        private ArrayList<String> mDatos;
+
+        public CustomAdapter(Context context, ArrayList<String> datos) {
+            super(context, 0, datos);
+            mContext = context;
+            mDatos = datos;
+>>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
         }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
+<<<<<<< HEAD
+=======
+            String dato = mDatos.get(position);
+
+>>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
             ViewHolder viewHolder;
             if (convertView == null) {
                 convertView = LayoutInflater.from(mContext).inflate(R.layout.list_item_layout, parent, false);
@@ -133,9 +175,14 @@ public class MainActivity extends AppCompatActivity {
                 viewHolder = (ViewHolder) convertView.getTag();
             }
 
+<<<<<<< HEAD
             Chip chip = chipsList.get(position);
 
             viewHolder.textView.setText(chip.toString());
+=======
+            // Establecer el texto y el comportamiento del botón
+            viewHolder.textView.setText(dato);
+>>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
 
             // Guardar la posición final para acceder dentro del OnClickListener
             final int finalPosition = position;
@@ -164,10 +211,17 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             // Obtener el dato seleccionado
+<<<<<<< HEAD
                             Chip chipSeleccionado = adapter.getItem(position);
 
                             // Actualizar la fecha de baneo a la fecha actual en la base de datos
                             dbManager.updateBaneoFecha(chipSeleccionado);
+=======
+                            String datoSeleccionado = adapter.getItem(position);
+
+                            // Actualizar la fecha de baneo a la fecha actual en la base de datos
+                            dbManager.updateBaneoFecha(datoSeleccionado);
+>>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
 
                             // Notificar al adaptador que los datos han cambiado
                             notifyDataSetChanged();
@@ -197,12 +251,21 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     // Obtener el dato seleccionado
+<<<<<<< HEAD
                     Chip chipSeleccionado = adapter.getItem(position);
+=======
+                    String datoSeleccionado = adapter.getItem(position);
+
+>>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
                     // Crear un intent para abrir la actividad de edición
                     Intent intent = new Intent(MainActivity.this, EditActivity.class);
 
                     // Pasar el dato seleccionado a la actividad de edición
+<<<<<<< HEAD
                     intent.putExtra("chipSeleccionado", chipSeleccionado);
+=======
+                    intent.putExtra("datoSeleccionado", datoSeleccionado);
+>>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
 
                     // Iniciar la actividad de edición
                     startActivity(intent);
