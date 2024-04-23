@@ -11,10 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.prueba.db.DatabaseManager;
-<<<<<<< HEAD
 import com.example.prueba.model.Chip;
-=======
->>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Calendar;
@@ -53,17 +50,11 @@ public class AddActivity extends AppCompatActivity {
                 String baneo = editTextBaneo.getText().toString();
                 String compania = editTextCompania.getText().toString();
                 String detalles = editTextDetalles.getText().toString();
-<<<<<<< HEAD
                 // Generamos el Chip mediante los datos obtenidos
                 Chip chip = new Chip(imei, numero, baneo, compania, detalles);
 
                 // Insertar los datos en la base de datos
                 dbManager.insertData(chip);
-=======
-
-                // Insertar los datos en la base de datos
-                dbManager.insertData(imei, numero, baneo, compania, detalles);
->>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
 
                 // Mostrar un mensaje de éxito o cerrar la actividad
                 Toast.makeText(AddActivity.this, "Datos agregados correctamente", Toast.LENGTH_SHORT).show();
@@ -83,7 +74,6 @@ public class AddActivity extends AppCompatActivity {
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-<<<<<<< HEAD
                                 String dia="";
                                 if(dayOfMonth<10){
                                     dia="0"+dayOfMonth;
@@ -98,10 +88,6 @@ public class AddActivity extends AppCompatActivity {
                                 }
                                 // Actualizar el campo de texto con la fecha seleccionada
                                 editTextBaneo.setText(year + "/" + mes + "/" + dia);
-=======
-                                // Actualizar el campo de texto con la fecha seleccionada
-                                editTextBaneo.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
->>>>>>> 236ad19f65dbeffef11277f76b2d0eb67a0a26c1
                             }
                         }, year, month, dayOfMonth);
                 datePickerDialog.show();
