@@ -1,0 +1,132 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/azul_casi_tenue">
+
+    <!-- Campos de entrada -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutImei"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="IMEI"
+        app:hintEnabled="true"
+        android:background="@color/azul_cielo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextImei"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false" /> <!-- Establece el límite de caracteres -->
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutNumero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textInputLayoutImei"
+        android:layout_marginTop="16dp"
+        android:hint="Número"
+        app:hintEnabled="true"
+        android:background="@color/azul_cielo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextNumero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="10" /> <!-- Establece el límite de caracteres -->
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutBaneo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textInputLayoutNumero"
+        android:layout_marginTop="16dp"
+        android:hint="Fecha de Baneo"
+        app:hintEnabled="true"
+        android:background="@color/azul_cielo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextBaneo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none" /> <!-- Cambiar inputType a none -->
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutCompania"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textInputLayoutBaneo"
+        android:layout_marginTop="16dp"
+        android:hint="Compañía"
+        app:hintEnabled="true"
+        android:background="@color/azul_cielo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextCompania"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutDetalles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textInputLayoutCompania"
+        android:layout_marginTop="16dp"
+        android:hint="Detalles"
+        app:hintEnabled="true"
+        android:background="@color/azul_cielo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextDetalles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Layout horizontal para los botones -->
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textInputLayoutDetalles"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <!-- Botón de guardar -->
+        <Button
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:id="@+id/btnGuardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Guardar"
+            android:textColor="@color/azul_rey"
+            app:icon="@drawable/save"
+            />
+
+        <!-- Botón de eliminar -->
+        <Button
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:id="@+id/btnEliminar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="110dp"
+            android:text="Eliminar"
+            android:textColor="@color/design_default_color_error"
+            app:icon="@drawable/trash"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
