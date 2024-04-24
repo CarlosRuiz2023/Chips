@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.example.prueba.db.DatabaseHelper;
 import com.example.prueba.db.DatabaseManager;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton fabAgregar;
     private ListView listViewDatos;
     private CustomAdapter adapter;
+    private CardView cardView;
     private ArrayList<Chip> chipsList = new ArrayList<>();
 
     @Override
@@ -125,7 +127,12 @@ public class MainActivity extends AppCompatActivity {
             if (convertView == null) {
                 convertView = LayoutInflater.from(mContext).inflate(R.layout.list_item_layout, parent, false);
                 viewHolder = new ViewHolder();
-                viewHolder.textView = convertView.findViewById(R.id.textViewListItem);
+                viewHolder.cardView = convertView.findViewById(R.id.cardView);
+                viewHolder.textViewImei = convertView.findViewById(R.id.textViewImei);
+                viewHolder.textViewPhoneNumber = convertView.findViewById(R.id.textViewPhoneNumber);
+                viewHolder.textViewBanDate = convertView.findViewById(R.id.textViewBanDate);
+                viewHolder.textViewCompany = convertView.findViewById(R.id.textViewCompany);
+                viewHolder.textViewChipDetails = convertView.findViewById(R.id.textViewChipDetails);
                 viewHolder.button = convertView.findViewById(R.id.buttonListItem);
                 convertView.setTag(viewHolder);
             } else {
@@ -134,7 +141,11 @@ public class MainActivity extends AppCompatActivity {
 
             Chip chip = chipsList.get(position);
 
-            viewHolder.textView.setText(chip.toString());
+            viewHolder.textViewImei.setText(chip.getImei());
+            viewHolder.textViewPhoneNumber.setText(chip.getNumero());
+            viewHolder.textViewBanDate.setText(chip.getBaneo());
+            viewHolder.textViewCompany.setText(chip.getCompania());
+            viewHolder.textViewChipDetails.setText(chip.getDetalle());
 
             // Guardar la posición final para acceder dentro del OnClickListener
             final int finalPosition = position;
@@ -192,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            viewHolder.textView.setOnClickListener(new View.OnClickListener() {
+            viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     // Obtener el dato seleccionado
@@ -214,7 +225,12 @@ public class MainActivity extends AppCompatActivity {
 
         // Clase ViewHolder para almacenar las vistas de cada elemento de la lista
         private class ViewHolder {
-            TextView textView;
+            TextView textViewImei;
+            TextView textViewPhoneNumber;
+            TextView textViewBanDate;
+            TextView textViewCompany;
+            TextView textViewChipDetails;
+            CardView cardView;
             Button button;
         }
     }

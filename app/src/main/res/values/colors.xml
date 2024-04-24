@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="seed">#6750A4</color>
-    <color name="md_theme_light_primary">#6750A4</color>
+    <color name="md_theme_light_primary">#B3261E</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>
     <color name="md_theme_light_primaryContainer">#EADDFF</color>
     <color name="md_theme_light_onPrimaryContainer">#21005D</color>
@@ -66,5 +66,10 @@
     <color name="azul_casi_tenue">#ADD8E6</color>
     <color name="cyan">#00FFFF</color>
     <color name="azul_rey">#4169E1</color>
-    <color name="gris">#6B6B6F</color> <!-- Gris -->
+    <color name="gris">#6B6B6F</color>
+    <color name="buttonBackgroundLight">#FFFFFF</color>
+    <color name="buttonBackgroundDark">#000000</color>
+    <color name="buttonTextLight">#B00020</color>
+    <color name="buttonTextDark">#FFFFFF</color>
+
 </resources>

@@ -5,27 +5,123 @@
     android:padding="16dp">
 
     <!-- Texto del elemento -->
-    <TextView
-        android:id="@+id/textViewListItem"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:clickable="true"
-        android:textColor="@color/md_theme_light_onSecondaryContainer"/>
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="1dp"
+        android:id="@+id/cardView">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
-    <!-- Botón adicional -->
+        <LinearLayout
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-    <Button
-        style="@style/Widget.Material3.Button.ElevatedButton"
-        android:id="@+id/buttonListItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:text="Baneado"
-        android:textColor="@color/design_default_color_error"
-        android:backgroundTint="@color/md_theme_dark_background"
-        />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <!-- IMEI -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IMEI: "
+                android:textStyle="bold"/>
 
+            <TextView
+                android:id="@+id/textViewImei"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+                </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <!-- Número de teléfono -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Número: "
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textViewPhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <!-- Fecha de ban -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Baneo: "
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textViewBanDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <!-- Compañía -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Compañía: "
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textViewCompany"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <!-- Detalles del chip -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detalles: "
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textViewChipDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <!-- Botón adicional -->
+            <Button
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                android:id="@+id/buttonListItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="BAN"
+                app:icon="@drawable/baneo"
+                android:theme="@style/Button"
+                />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

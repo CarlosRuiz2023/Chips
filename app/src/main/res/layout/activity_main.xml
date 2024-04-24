@@ -24,8 +24,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewTitle"
-        android:divider="@color/azul_marino"
-        android:dividerHeight="3dp"
         android:clipToPadding="false"
         android:paddingTop="16dp"
         android:paddingBottom="16dp"
@@ -43,14 +41,5 @@
         android:src="@drawable/add"
         android:contentDescription="@string/agregar"
         android:backgroundTint="@color/cyan"/>
-
-    <!--com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAgregar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:contentDescription="@string/agregar"
-        android:src="@drawable/add"/-->
 
 </RelativeLayout>
