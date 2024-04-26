@@ -1,4 +1,4 @@
-package com.example.prueba;
+package com.example.prueba.view;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.prueba.R;
 import com.example.prueba.db.DatabaseManager;
 import com.example.prueba.model.Chip;
 import com.google.android.material.textfield.TextInputEditText;

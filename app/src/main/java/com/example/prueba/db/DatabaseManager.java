@@ -77,4 +77,26 @@ public class DatabaseManager {
     public void deleteData(Chip chip) {
         database.delete(DatabaseHelper.TABLE_NAME, DatabaseHelper.COLUMN_IMEI + "=?", new String[]{chip.getImei()});
     }
+    public void updateInUse(Chip chip) {
+        // Crea un objeto ContentValues para almacenar el nuevo valor de la fecha de baneo
+        ContentValues values = new ContentValues();
+        values.put(DatabaseHelper.COLUMN_BANEO, "");
+
+        // Actualiza el valor de la fecha de baneo en la base de datos para el dato seleccionado
+        database.update(DatabaseHelper.TABLE_NAME, values, DatabaseHelper.COLUMN_IMEI + "=?", new String[]{chip.getImei()});
+    } 
+    public Cursor searchData(String searchQuery) {
+        // Especifica la columna por la que deseas ordenar (en este caso, la columna de fecha de banneo)
+        String orderBy = DatabaseHelper.COLUMN_BANEO + " ASC"; // Orden ascendente (desde el más antiguo hasta el más reciente)
+
+        // Construye la cláusula WHERE para buscar por IMEI o número
+        String selection = DatabaseHelper.COLUMN_IMEI + " LIKE ? OR " +
+                DatabaseHelper.COLUMN_NUMERO + " LIKE ?";
+        // Especifica los argumentos para la cláusula WHERE (el '%' se utiliza para buscar coincidencias parciales)
+        String[] selectionArgs = {"%" + searchQuery + "%", "%" + searchQuery + "%"};
+
+        // Realiza la consulta a la base de datos, incluyendo la cláusula WHERE y la cláusula ORDER BY
+        return database.query(DatabaseHelper.TABLE_NAME, null, selection, selectionArgs, null, null, orderBy);
+    }
+
 }

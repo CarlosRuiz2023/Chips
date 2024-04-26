@@ -29,21 +29,50 @@
         <item name="colorPrimaryInverse">@color/md_theme_dark_inversePrimary</item>
     </style>
     <!-- Dark mode -->
-    <!-- Screen background if dark mode on -->
+    <!-- Button background if dark mode on -->
     <style name='SCREEN'>
-        <item name='android:background'>#000</item>
+        <item name='android:background'>@color/azul_marino</item>
     </style>
-
     <!-- Texts background if dark mode on -->
     <style name='TEXT'>
-        <item name='android:background'>#FFF </item>
+        <item name='android:textColor'>@color/azul_cielo</item>
     </style>
-
     <!-- Button background if dark mode on -->
-    <style name='Button'>
+    <style name='ButtonBanned'>
+        <item name="colorPrimary">@color/md_theme_light_primary</item>
         <item name='android:backgroundTint'>@android:color/background_light</item>
-        <item name='android:textColor'>#000</item>
         <item name="android:paddingLeft">@dimen/m3_btn_icon_btn_padding_left</item>
         <item name="android:paddingRight">@dimen/m3_btn_icon_btn_padding_right</item>
+    </style>
+    <!-- ButtonUsar background if dark mode on -->
+    <style name='ButtonUsar'>
+        <item name='android:backgroundTint'>@color/buttonBackgroundLight</item>
+        <item name='colorPrimary'>#2196F3</item>
+        <item name="android:paddingLeft">@dimen/m3_btn_icon_btn_padding_left</item>
+        <item name="android:paddingRight">@dimen/m3_btn_icon_btn_padding_right</item>
+    </style>
+    <!-- Button Floating background if light mode on -->
+    <style name='ButtonFloating'>
+        <item name='android:backgroundTint'>@color/azul_cielo</item>
+    </style>
+    <!-- Button Save background if dark mode on -->
+    <style name='ButtonSave'>
+        <item name="colorPrimary">@color/buttonBackgroundLight</item>
+        <item name='android:backgroundTint'>@android:color/background_dark</item>
+        <item name="android:paddingLeft">@dimen/m3_btn_icon_btn_padding_left</item>
+        <item name="android:paddingRight">@dimen/m3_btn_icon_btn_padding_right</item>
+    </style>
+    <!-- Button Delete background if dark mode on -->
+    <style name='ButtonDelete'>
+        <item name="colorPrimary">@color/buttonBackgroundLight</item>
+        <item name='android:backgroundTint'>@android:color/background_dark</item>
+        <item name="android:paddingLeft">@dimen/m3_btn_icon_btn_padding_left</item>
+        <item name="android:paddingRight">@dimen/m3_btn_icon_btn_padding_right</item>
+    </style>
+    <!-- Texts background if dark mode on -->
+    <style name="Fields" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="colorPrimary">@color/azul_casi_tenue</item>
+        <item name="android:textColorHint">@color/azul_casi_tenue</item>
+        <item name="android:textColor">@color/azul_casi_tenue</item>
     </style>
 </resources>

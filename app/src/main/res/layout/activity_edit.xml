@@ -2,22 +2,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/azul_casi_tenue">
+    android:padding="30dp"
+    android:theme="@style/SCREEN">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+    <!-- Texto de título -->
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="Modificar Chip"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:theme="@style/TEXT"
+        />
 
     <!-- Campos de entrada -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutImei"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/textViewTitle"
         android:layout_marginTop="16dp"
         android:hint="IMEI"
-        app:hintEnabled="true"
-        android:background="@color/azul_cielo">
+        android:theme="@style/Fields"
+        app:hintEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextImei"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:theme="@style/Fields"
             android:enabled="false" /> <!-- Establece el límite de caracteres -->
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -29,14 +50,15 @@
         android:layout_below="@id/textInputLayoutImei"
         android:layout_marginTop="16dp"
         android:hint="Número"
-        app:hintEnabled="true"
-        android:background="@color/azul_cielo">
+        android:theme="@style/Fields"
+        app:hintEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextNumero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
+            android:theme="@style/Fields"
             android:maxLength="10" /> <!-- Establece el límite de caracteres -->
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -48,13 +70,14 @@
         android:layout_below="@id/textInputLayoutNumero"
         android:layout_marginTop="16dp"
         android:hint="Fecha de Baneo"
-        app:hintEnabled="true"
-        android:background="@color/azul_cielo">
+        android:theme="@style/Fields"
+        app:hintEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextBaneo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:theme="@style/Fields"
             android:inputType="none" /> <!-- Cambiar inputType a none -->
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -66,12 +89,13 @@
         android:layout_below="@id/textInputLayoutBaneo"
         android:layout_marginTop="16dp"
         android:hint="Compañía"
-        app:hintEnabled="true"
-        android:background="@color/azul_cielo">
+        android:theme="@style/Fields"
+        app:hintEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextCompania"
             android:layout_width="match_parent"
+            android:theme="@style/Fields"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -83,12 +107,13 @@
         android:layout_below="@id/textInputLayoutCompania"
         android:layout_marginTop="16dp"
         android:hint="Detalles"
-        app:hintEnabled="true"
-        android:background="@color/azul_cielo">
+        android:theme="@style/Fields"
+        app:hintEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextDetalles"
             android:layout_width="match_parent"
+            android:theme="@style/Fields"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -112,6 +137,7 @@
             android:text="Guardar"
             android:textColor="@color/azul_rey"
             app:icon="@drawable/save"
+            android:theme="@style/ButtonSave"
             />
 
         <!-- Botón de eliminar -->
@@ -121,12 +147,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginLeft="110dp"
+            android:layout_marginLeft="90dp"
             android:text="Eliminar"
             android:textColor="@color/design_default_color_error"
             app:icon="@drawable/trash"
+            android:theme="@style/ButtonDelete"
             />
 
     </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

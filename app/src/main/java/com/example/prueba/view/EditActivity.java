@@ -1,4 +1,4 @@
-package com.example.prueba;
+package com.example.prueba.view;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.prueba.R;
 import com.example.prueba.db.DatabaseManager;
 import com.example.prueba.model.Chip;
 import com.google.android.material.textfield.TextInputEditText;
@@ -97,7 +98,7 @@ public class EditActivity extends AppCompatActivity {
                 Button buttonNo = dialogView.findViewById(R.id.buttonNo);
 
                 // Establecer el mensaje del diálogo
-                textMessage.setText("¿Está seguro de actualizar la fecha de baneo?");
+                textMessage.setText("¿Está seguro de eliminar este chip?");
 
                 // Configurar el clic del botón "Sí"
                 buttonYes.setOnClickListener(new View.OnClickListener() {

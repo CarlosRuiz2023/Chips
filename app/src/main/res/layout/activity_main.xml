@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/azul_casi_tenue">
+    android:theme="@style/SCREEN"
+    >
 
     <!-- Texto de título -->
     <TextView
@@ -13,17 +15,63 @@
         android:text="Chips del Charly"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@color/azul_marino"
+        android:theme="@style/TEXT"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
         />
+
+    <LinearLayout
+        android:id="@+id/Search"
+        android:layout_below="@id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/list_item_border"
+        android:padding="8dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="10dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:contentDescription="Lupa"
+            android:src="@drawable/lupa"
+            android:background="@color/buttonBackgroundLight"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="Buscar"
+            android:inputType="text"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <ImageButton
+            android:id="@+id/clearSearchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Cancel"
+            android:src="@drawable/lupa"
+            android:visibility="gone" />
+
+    </LinearLayout>
 
     <!-- Lista de datos -->
     <ListView
         android:id="@+id/listViewDatos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textViewTitle"
+        android:layout_below="@id/Search"
         android:clipToPadding="false"
         android:paddingTop="16dp"
         android:paddingBottom="16dp"
@@ -40,6 +88,6 @@
         android:layout_marginEnd="20dp"
         android:src="@drawable/add"
         android:contentDescription="@string/agregar"
-        android:backgroundTint="@color/cyan"/>
+        android:theme="@style/ButtonFloating"/>
 
 </RelativeLayout>

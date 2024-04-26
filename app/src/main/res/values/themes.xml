@@ -3,14 +3,9 @@
     <style name="Base.Theme.Prueba" parent="Theme.Material3.DayNight.NoActionBar">
 
     </style>
-
-        <style name='SCREEN'>
-                <item name='android:background'>#FFF</item>
-        </style>
-        <!-- Light mode -->
     <!-- Screen background if light mode on -->
     <style name="Theme.Prueba" parent="Base.Theme.Prueba">
-        <item name="colorPrimary">@color/md_theme_light_primary</item>
+        <item name="colorPrimary">@color/md_theme_dark_background</item>
         <item name="colorOnPrimary">@color/md_theme_light_onPrimary</item>
         <item name="colorPrimaryContainer">@color/md_theme_light_primaryContainer</item>
         <item name="colorOnPrimaryContainer">@color/md_theme_light_onPrimaryContainer</item>
@@ -37,17 +32,51 @@
         <item name="colorOnSurfaceInverse">@color/md_theme_light_inverseOnSurface</item>
         <item name="colorPrimaryInverse">@color/md_theme_light_inversePrimary</item>
     </style>
-
+   <!-- Light mode -->
+   <!-- Button background if light mode on -->
+    <style name='SCREEN'>
+        <item name='android:background'>@color/azul_casi_tenue</item>
+    </style>
     <!-- Texts background if light mode on -->
-   <style name='TEXT'>
-        <item name='android:background'>#000</item>
-   </style>
-
-            <!-- Button background if light mode on -->
-   <style name='Button'>
+    <style name='TEXT'>
+        <item name='android:textColor'>@color/azul_marino</item>
+    </style>
+   <!-- Button background if light mode on -->
+   <style name='ButtonBanned'>
+        <item name="colorPrimary">@color/md_theme_light_primary</item>
         <item name='android:backgroundTint'>@android:color/background_dark</item>
-        <item name='android:textColor'>#FFF</item>
         <item name="android:paddingLeft">@dimen/m3_btn_icon_btn_padding_left</item>
         <item name="android:paddingRight">@dimen/m3_btn_icon_btn_padding_right</item>
    </style>
+    <!-- ButtonUsar background if light mode on -->
+    <style name='ButtonUsar'>
+        <item name='android:backgroundTint'>@color/azul_casi_tenue</item>
+        <item name='colorPrimary'>#2196F3</item>
+        <item name="android:paddingLeft">@dimen/m3_btn_icon_btn_padding_left</item>
+        <item name="android:paddingRight">@dimen/m3_btn_icon_btn_padding_right</item>
+    </style>
+    <!-- Button Floating background if light mode on -->
+    <style name='ButtonFloating'>
+        <item name='android:backgroundTint'>@color/cyan</item>
+    </style>
+    <!-- Button Save background if light mode on -->
+    <style name='ButtonSave'>
+        <item name="colorPrimary">@color/buttonBackgroundDark</item>
+        <item name='android:backgroundTint'>@android:color/background_light</item>
+        <item name="android:paddingLeft">@dimen/m3_btn_icon_btn_padding_left</item>
+        <item name="android:paddingRight">@dimen/m3_btn_icon_btn_padding_right</item>
+    </style>
+    <!-- Button Delete background if light mode on -->
+    <style name='ButtonDelete'>
+        <item name="colorPrimary">@color/buttonBackgroundDark</item>
+        <item name='android:backgroundTint'>@android:color/background_light</item>
+        <item name="android:paddingLeft">@dimen/m3_btn_icon_btn_padding_left</item>
+        <item name="android:paddingRight">@dimen/m3_btn_icon_btn_padding_right</item>
+    </style>
+    <!-- Texts background if dark mode on -->
+    <style name="Fields" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="colorPrimary">@color/azul_marino</item>
+        <item name="android:textColorHint">@color/azul_marino</item>
+        <item name="android:textColor">@color/azul_marino</item>
+    </style>
 </resources>

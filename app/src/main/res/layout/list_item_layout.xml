@@ -10,7 +10,9 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="1dp"
         android:id="@+id/cardView">
@@ -108,18 +110,34 @@
             </LinearLayout>
 
         </LinearLayout>
-        <!-- Botón adicional -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginVertical="15dp">
+        <!-- Botón banneo -->
             <Button
                 style="@style/Widget.Material3.Button.OutlinedButton.Icon"
-                android:id="@+id/buttonListItem"
+                android:id="@+id/buttonBaneed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="BAN"
                 app:icon="@drawable/baneo"
-                android:theme="@style/Button"
+                android:theme="@style/ButtonBanned"
                 />
-
+            <!-- Botón adicional -->
+            <Button
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                android:id="@+id/buttonInUse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="USAR"
+                app:icon="@drawable/signal"
+                android:theme="@style/ButtonUsar"
+                />
+        </LinearLayout>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
