@@ -10,7 +10,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.prueba.R;
+import com.example.prueba.controller.AnimatorNew;
 import com.example.prueba.db.DatabaseManager;
 import com.example.prueba.model.Chip;
 import com.google.android.material.textfield.TextInputEditText;
@@ -23,6 +25,7 @@ public class AddActivity extends AppCompatActivity {
 
     private TextInputEditText editTextBaneo;
     private DatabaseManager dbManager;
+    private LottieAnimationView likeAnimationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,10 @@ public class AddActivity extends AppCompatActivity {
         editTextCompania = findViewById(R.id.editTextCompania);
         editTextDetalles = findViewById(R.id.editTextDetalles);
         btnRegistrar = findViewById(R.id.btnRegistrar);
+        likeAnimationView = findViewById(R.id.likeImageView1);
+
+        AnimatorNew likeAnimator = new AnimatorNew();
+        likeAnimator.beginAnimation(likeAnimationView,R.raw.animation,R.raw.cohete);
 
         // Crear instancia del administrador de la base de datos
         dbManager = new DatabaseManager(this);

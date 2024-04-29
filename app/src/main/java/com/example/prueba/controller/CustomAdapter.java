@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.prueba.view.EditActivity;
 import com.example.prueba.view.MainActivity;
 import com.example.prueba.R;
@@ -84,6 +85,9 @@ public class CustomAdapter extends ArrayAdapter<Chip> {
                 TextView textMessage = dialogView.findViewById(R.id.textMessage);
                 Button buttonYes = dialogView.findViewById(R.id.buttonYes);
                 Button buttonNo = dialogView.findViewById(R.id.buttonNo);
+                LottieAnimationView likeAnimationView = dialogView.findViewById(R.id.likeImageView2);
+                AnimatorNew likeAnimator = new AnimatorNew();
+                likeAnimator.beginAnimation(likeAnimationView,R.raw.alert,R.raw.alert_dark);
 
                 // Establecer el mensaje del diálogo
                 textMessage.setText("¿Está seguro de actualizar la fecha de baneo?");
@@ -137,6 +141,9 @@ public class CustomAdapter extends ArrayAdapter<Chip> {
                 TextView textMessage = dialogView.findViewById(R.id.textMessage);
                 Button buttonYes = dialogView.findViewById(R.id.buttonYes);
                 Button buttonNo = dialogView.findViewById(R.id.buttonNo);
+                LottieAnimationView likeAnimationView = dialogView.findViewById(R.id.likeImageView2);
+                AnimatorNew likeAnimator = new AnimatorNew();
+                likeAnimator.beginAnimation(likeAnimationView,R.raw.prueba3,R.raw.alert_dark);
 
                 // Establecer el mensaje del diálogo
                 textMessage.setText("¿Está seguro de usar este chip?");

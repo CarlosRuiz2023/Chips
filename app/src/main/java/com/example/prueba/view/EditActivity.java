@@ -14,7 +14,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.prueba.R;
+import com.example.prueba.controller.AnimatorNew;
 import com.example.prueba.db.DatabaseManager;
 import com.example.prueba.model.Chip;
 import com.google.android.material.textfield.TextInputEditText;
@@ -27,6 +29,7 @@ public class EditActivity extends AppCompatActivity {
 
     private TextInputEditText editTextBaneo;
     private DatabaseManager dbManager;
+    private LottieAnimationView likeAnimationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,10 @@ public class EditActivity extends AppCompatActivity {
         editTextDetalles = findViewById(R.id.editTextDetalles);
         btnGuardar = findViewById(R.id.btnGuardar);
         btnEliminar = findViewById(R.id.btnEliminar);
+        likeAnimationView = findViewById(R.id.likeImageView);
+
+        AnimatorNew likeAnimator = new AnimatorNew();
+        likeAnimator.beginAnimation(likeAnimationView,R.raw.animation,R.raw.cohete);
 
         // Crear instancia del administrador de la base de datos
         dbManager = new DatabaseManager(this);
@@ -96,6 +103,9 @@ public class EditActivity extends AppCompatActivity {
                 TextView textMessage = dialogView.findViewById(R.id.textMessage);
                 Button buttonYes = dialogView.findViewById(R.id.buttonYes);
                 Button buttonNo = dialogView.findViewById(R.id.buttonNo);
+                LottieAnimationView likeAnimationView = dialogView.findViewById(R.id.likeImageView2);
+                AnimatorNew likeAnimator = new AnimatorNew();
+                likeAnimator.beginAnimation(likeAnimationView,R.raw.peligro,R.raw.peligro_dark);
 
                 // Establecer el mensaje del diálogo
                 textMessage.setText("¿Está seguro de eliminar este chip?");

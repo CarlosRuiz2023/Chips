@@ -1,5 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="30dp"
@@ -14,7 +15,7 @@
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="casual"
+        android:fontFamily="@font/arbutus"
         android:text="Modificar Chip"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -31,6 +32,7 @@
         android:layout_below="@id/textViewTitle"
         android:layout_marginTop="16dp"
         android:hint="IMEI"
+        android:fontFamily="@font/pattaya"
         android:theme="@style/Fields"
         app:hintEnabled="true">
 
@@ -39,6 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/Fields"
+            android:fontFamily="@font/belleza"
             android:enabled="false" /> <!-- Establece el límite de caracteres -->
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -50,6 +53,7 @@
         android:layout_below="@id/textInputLayoutImei"
         android:layout_marginTop="16dp"
         android:hint="Número"
+        android:fontFamily="@font/pattaya"
         android:theme="@style/Fields"
         app:hintEnabled="true">
 
@@ -59,6 +63,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:theme="@style/Fields"
+            android:fontFamily="@font/belleza"
             android:maxLength="10" /> <!-- Establece el límite de caracteres -->
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -70,6 +75,7 @@
         android:layout_below="@id/textInputLayoutNumero"
         android:layout_marginTop="16dp"
         android:hint="Fecha de Baneo"
+        android:fontFamily="@font/pattaya"
         android:theme="@style/Fields"
         app:hintEnabled="true">
 
@@ -78,6 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/Fields"
+            android:fontFamily="@font/belleza"
             android:inputType="none" /> <!-- Cambiar inputType a none -->
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -89,6 +96,7 @@
         android:layout_below="@id/textInputLayoutBaneo"
         android:layout_marginTop="16dp"
         android:hint="Compañía"
+        android:fontFamily="@font/pattaya"
         android:theme="@style/Fields"
         app:hintEnabled="true">
 
@@ -96,6 +104,7 @@
             android:id="@+id/editTextCompania"
             android:layout_width="match_parent"
             android:theme="@style/Fields"
+            android:fontFamily="@font/belleza"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -107,6 +116,7 @@
         android:layout_below="@id/textInputLayoutCompania"
         android:layout_marginTop="16dp"
         android:hint="Detalles"
+        android:fontFamily="@font/pattaya"
         android:theme="@style/Fields"
         app:hintEnabled="true">
 
@@ -114,6 +124,7 @@
             android:id="@+id/editTextDetalles"
             android:layout_width="match_parent"
             android:theme="@style/Fields"
+            android:fontFamily="@font/belleza"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -137,6 +148,7 @@
             android:text="Guardar"
             android:textColor="@color/azul_rey"
             app:icon="@drawable/save"
+            android:fontFamily="@font/chewy"
             android:theme="@style/ButtonSave"
             />
 
@@ -151,10 +163,18 @@
             android:text="Eliminar"
             android:textColor="@color/design_default_color_error"
             app:icon="@drawable/trash"
+            android:fontFamily="@font/chewy"
             android:theme="@style/ButtonDelete"
             />
 
     </LinearLayout>
     </RelativeLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/likeImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="16dp"
+        android:layout_weight="1" />
 
 </RelativeLayout>

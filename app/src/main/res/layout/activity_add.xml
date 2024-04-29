@@ -10,18 +10,17 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
     <!-- Texto de título -->
-    <TextView
-        android:id="@+id/textViewTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="Agregar Chip"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:theme="@style/TEXT"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        />
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/arbutus"
+            android:text="Agregar Chip"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:theme="@style/TEXT" />
     <!-- Campos de entrada -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutImei"
@@ -30,6 +29,7 @@
         android:layout_below="@id/textViewTitle"
         android:layout_marginTop="16dp"
         android:hint="IMEI"
+        android:fontFamily="@font/pattaya"
         android:theme="@style/Fields"
         app:hintEnabled="true">
 
@@ -38,6 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
+            android:fontFamily="@font/belleza"
             android:theme="@style/Fields"
             android:maxLength="19" /> <!-- Establece el límite de caracteres -->
 
@@ -50,6 +51,7 @@
         android:layout_below="@id/textInputLayoutImei"
         android:layout_marginTop="16dp"
         android:hint="Número"
+        android:fontFamily="@font/pattaya"
         android:theme="@style/Fields"
         app:hintEnabled="true">
 
@@ -58,6 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
+            android:fontFamily="@font/belleza"
             android:theme="@style/Fields"
             android:maxLength="10" /> <!-- Establece el límite de caracteres -->
 
@@ -70,6 +73,7 @@
         android:layout_below="@id/textInputLayoutNumero"
         android:layout_marginTop="16dp"
         android:hint="Fecha de Baneo"
+        android:fontFamily="@font/pattaya"
         android:theme="@style/Fields"
         app:hintEnabled="true">
 
@@ -78,6 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/Fields"
+            android:fontFamily="@font/belleza"
             android:inputType="none" /> <!-- Cambiar inputType a none -->
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -89,6 +94,7 @@
         android:layout_below="@id/textInputLayoutBaneo"
         android:layout_marginTop="16dp"
         android:hint="Compañía"
+        android:fontFamily="@font/pattaya"
         android:theme="@style/Fields"
         app:hintEnabled="true">
 
@@ -96,6 +102,7 @@
             android:id="@+id/editTextCompania"
             android:layout_width="match_parent"
             android:theme="@style/Fields"
+            android:fontFamily="@font/belleza"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -107,6 +114,7 @@
         android:layout_below="@id/textInputLayoutCompania"
         android:layout_marginTop="16dp"
         android:hint="Detalles"
+        android:fontFamily="@font/pattaya"
         android:theme="@style/Fields"
         app:hintEnabled="true">
 
@@ -114,6 +122,7 @@
             android:id="@+id/editTextDetalles"
             android:layout_width="match_parent"
             android:theme="@style/Fields"
+            android:fontFamily="@font/belleza"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -135,10 +144,16 @@
             android:text="Guardar"
             android:paddingHorizontal="130dp"
             app:icon="@drawable/save"
+            android:fontFamily="@font/chewy"
             android:textColor="@color/azul_rey"
             android:theme="@style/ButtonSave"
             />
     </LinearLayout>
     </RelativeLayout>
-
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/likeImageView1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="16dp"
+        android:layout_weight="1"/>
 </RelativeLayout>

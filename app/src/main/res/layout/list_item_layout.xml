@@ -1,13 +1,12 @@
 <!-- list_item_layout.xml -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="16dp">
 
     <!-- Texto del elemento -->
     <androidx.cardview.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="1dp"
@@ -33,16 +32,18 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
             <!-- IMEI -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="IMEI: "
-                android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pattaya"
+                    android:text="IMEI: "
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textViewImei"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/textViewImei"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/belleza"/>
                 </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -53,11 +54,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Número: "
+                android:fontFamily="@font/pattaya"
                 android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/textViewPhoneNumber"
                 android:layout_width="wrap_content"
+                android:fontFamily="@font/belleza"
                 android:layout_height="wrap_content"/>
             </LinearLayout>
             <LinearLayout
@@ -69,11 +72,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Baneo: "
+                android:fontFamily="@font/pattaya"
                 android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/textViewBanDate"
                 android:layout_width="wrap_content"
+                android:fontFamily="@font/belleza"
                 android:layout_height="wrap_content"/>
             </LinearLayout>
             <LinearLayout
@@ -85,11 +90,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Compañía: "
+                android:fontFamily="@font/pattaya"
                 android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/textViewCompany"
                 android:layout_width="wrap_content"
+                android:fontFamily="@font/belleza"
                 android:layout_height="wrap_content"/>
             </LinearLayout>
             <LinearLayout
@@ -101,11 +108,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Detalles: "
+                android:fontFamily="@font/pattaya"
                 android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/textViewChipDetails"
                 android:layout_width="wrap_content"
+                android:fontFamily="@font/belleza"
                 android:layout_height="wrap_content"/>
             </LinearLayout>
 
@@ -117,26 +126,26 @@
             android:layout_marginVertical="15dp">
         <!-- Botón banneo -->
             <Button
-                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
                 android:id="@+id/buttonBaneed"
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:fontFamily="@font/chewy"
                 android:text="BAN"
-                app:icon="@drawable/baneo"
                 android:theme="@style/ButtonBanned"
-                />
+                app:icon="@drawable/baneo" />
             <!-- Botón adicional -->
             <Button
-                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
                 android:id="@+id/buttonInUse"
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:fontFamily="@font/chewy"
                 android:text="USAR"
-                app:icon="@drawable/signal"
                 android:theme="@style/ButtonUsar"
-                />
+                app:icon="@drawable/signal" />
         </LinearLayout>
         </LinearLayout>
 
