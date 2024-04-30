@@ -143,7 +143,7 @@ public class CustomAdapter extends ArrayAdapter<Chip> {
                 Button buttonNo = dialogView.findViewById(R.id.buttonNo);
                 LottieAnimationView likeAnimationView = dialogView.findViewById(R.id.likeImageView2);
                 AnimatorNew likeAnimator = new AnimatorNew();
-                likeAnimator.beginAnimation(likeAnimationView,R.raw.prueba3,R.raw.alert_dark);
+                likeAnimator.beginAnimation(likeAnimationView,R.raw.usar,R.raw.usar_dark);
 
                 // Establecer el mensaje del diálogo
                 textMessage.setText("¿Está seguro de usar este chip?");
@@ -196,6 +196,7 @@ public class CustomAdapter extends ArrayAdapter<Chip> {
 
                 // Iniciar la actividad de edición
                 activityContext.startActivity(intent);
+                mainActivity.overridePendingTransition(R.anim.zoom_in, 0);
             }
         });
 

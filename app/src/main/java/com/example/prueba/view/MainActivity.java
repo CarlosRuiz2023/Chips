@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.prueba.R;
 import com.example.prueba.controller.CustomAdapter;
@@ -57,13 +59,10 @@ public class MainActivity extends AppCompatActivity {
         // Asignar acción al botón "Agregar"
         fabAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
-                // Crear un intent para abrir la actividad de edición
+            public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, AddActivity.class);
-
-                // Iniciar la actividad de edición
                 startActivity(intent);
+                overridePendingTransition(R.anim.zoom_in, 0);
             }
         });
         editTextBusqueda.addTextChangedListener(new TextWatcher() {
@@ -110,6 +109,12 @@ public class MainActivity extends AppCompatActivity {
 
         // Obtener todos los datos y mostrarlos en la interfaz de usuario
         mostrarDatos();
+    }
+    public void switchFragment(Fragment fragment, int enterAnimation, int exitAnimation){
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction().setCustomAnimations(enterAnimation,0,0,exitAnimation);
+        //ft.replace(R.id.frame_container,fragment);
+        ft.addToBackStack(null).commit();
+
     }
 
     public void mostrarDatos() {

@@ -42,7 +42,7 @@ public class AddActivity extends AppCompatActivity {
         likeAnimationView = findViewById(R.id.likeImageView1);
 
         AnimatorNew likeAnimator = new AnimatorNew();
-        likeAnimator.beginAnimation(likeAnimationView,R.raw.animation,R.raw.cohete);
+        likeAnimator.beginAnimation(likeAnimationView,R.raw.animation,R.raw.animation);
 
         // Crear instancia del administrador de la base de datos
         dbManager = new DatabaseManager(this);
@@ -67,6 +67,7 @@ public class AddActivity extends AppCompatActivity {
                 // Mostrar un mensaje de éxito o cerrar la actividad
                 Toast.makeText(AddActivity.this, "Datos agregados correctamente", Toast.LENGTH_SHORT).show();
                 finish();
+                overridePendingTransition(R.anim.zoom_out,0); // Aplica la animación
             }
         });
 

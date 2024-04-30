@@ -47,7 +47,7 @@ public class EditActivity extends AppCompatActivity {
         likeAnimationView = findViewById(R.id.likeImageView);
 
         AnimatorNew likeAnimator = new AnimatorNew();
-        likeAnimator.beginAnimation(likeAnimationView,R.raw.animation,R.raw.cohete);
+        likeAnimator.beginAnimation(likeAnimationView,R.raw.carita,R.raw.cohete);
 
         // Crear instancia del administrador de la base de datos
         dbManager = new DatabaseManager(this);
@@ -85,6 +85,7 @@ public class EditActivity extends AppCompatActivity {
                 // Mostrar un mensaje de éxito o cerrar la actividad
                 Toast.makeText(EditActivity.this, "Dato actualizado correctamente", Toast.LENGTH_SHORT).show();
                 finish();
+                overridePendingTransition(R.anim.zoom_out, 0); // Aplica la animación
             }
         });
         // Configurar el botón de eliminar para eliminar el dato de la base de datos
@@ -124,6 +125,7 @@ public class EditActivity extends AppCompatActivity {
                         // Mostrar un mensaje de éxito o cerrar la actividad
                         Toast.makeText(EditActivity.this, "Dato eliminado correctamente", Toast.LENGTH_SHORT).show();
                         finish();
+                        overridePendingTransition(R.anim.zoom_out, 0); // Aplica la animación
                         dialog.dismiss(); // Cerrar el diálogo después de hacer clic en "Sí"
                     }
                 });

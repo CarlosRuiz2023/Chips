@@ -43,4 +43,6 @@ dependencies {
 
     implementation("com.google.android.material:material:1.12.0-alpha03")
     implementation ("com.airbnb.android:lottie:3.4.2")
+    implementation ("androidx.constraintlayout:constraintlayout:2.0.4")
+
 }
